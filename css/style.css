@@ -61,11 +61,13 @@ picture {
 /* Globals */
 
 body {
+
   width: 100%;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--vl-gray);
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -88,6 +90,7 @@ header .text-content {
 
 .text-content h1 {
   color: var(--vd-blue);
+  font-size: 1.6rem;
 }
 .text-content h1#head {
   font-weight: var(--fw-xlight);
@@ -102,7 +105,7 @@ header .text-content {
 
 section {
   height: auto;
-  padding: 0 1.4rem 5rem 1.4rem;
+  padding: 0 1.87rem 0rem 1.87rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,12 +174,13 @@ section {
   flex-direction: column;
 }
 
-/*  1024px */
+/*  1024px Screen Resize */
 @media only screen and (min-width: 64rem) {
   section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+   
   }
 
   .text-content h1{
