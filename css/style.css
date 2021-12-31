@@ -1,42 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-:root{
+:root {
+  /* Primary */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
 
-    /* Primary */
-    --red:hsl(0, 78%, 62%);
-    --cyan: hsl(180, 62%, 55%);
-    --orange: hsl(34, 97%, 64%);
-    --blue: hsl(212, 86%, 64%);
+  /* Neutral */
+  --vd-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --vl-gray: hsl(0, 0%, 98%);
 
-    /* Neutral */
-    --vd-blue:hsl(234, 12%, 34%);
-    --grayish-blue: hsl(229, 6%, 66%);
-    --vl-gray: hsl(0, 0%, 98%);
-
-    /* Font Weights */
-    --fw-xlight:200;
-    --fw-regular:400;
-    --fw-sbold:600;
-
-
+  /* Font Weights */
+  --fw-xlight: 200;
+  --fw-regular: 400;
+  --fw-sbold: 600;
 }
 
 /* CSS Resets */
 
-body,h1,h2,h3,h4,h5,h6,p,ul,li,a{
-    margin:0;
-    padding:0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
 }
 
-*,*::before,*::after{
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input,
 button,
 textarea,
-select, a {
+select,
+a {
   font: inherit;
 }
 
@@ -48,16 +58,128 @@ picture {
 
 /* end of resets */
 
-body{
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+/* Globals */
 
+body {
+  width: 100%;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--vl-gray);
+  font-family: "Poppins", sans-serif;
 }
 
-p{font-size: 1.06rem;}
-
+h1 {
+  font-size: 1.6rem;
+}
 
 /* Mobile Design - 375px */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+header .text-content {
+  height: auto;
+  text-align: center;
+}
+
+.text-content h1 {
+  color: var(--vd-blue);
+}
+.text-content h1#head {
+  font-weight: var(--fw-xlight);
+}
+
+.text-content p {
+  max-width: 600px;
+  margin-top: 1rem;
+  padding: 0 1.4rem;
+  color: var(--grayish-blue);
+}
+
+section {
+  height: auto;
+  padding: 0 1.4rem 5rem 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  min-height: 14.06rem;
+  max-height: 15.62rem;
+  min-width: 19.687rem;
+  max-width: 21.875rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 15px 20px -5px rgba(66, 103, 167, 0.3);
+  position: relative;
+  border-radius: 10px;
+}
+.card h2 {
+  color: var(--vd-blue);
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  color: var(--grayish-blue);
+  font-weight: var(--fw-xlight);
+  font-size: 0.9rem;
+}
+
+.card .image {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-top: 3rem;
+}
+
+.card::before {
+  content: "";
+  height: 0.25rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card.supervisor::before {
+  background-color: var(--cyan);
+}
+.card.team-builder::before {
+  background-color: var(--red);
+}
+.card.karma::before {
+  background-color: var(--orange);
+}
+.card.calculator::before {
+  background-color: var(--blue);
+}
+
+.feature-container-m {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+/*  1024px */
+@media only screen and (min-width: 64rem) {
+  section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-content h1{
+      font-size: 2.0rem;
+  }
+}
